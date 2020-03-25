@@ -5,7 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class empresa1 {
+public class Edad {
     public static void main(String[] args) {
         Conexion conexion = new Conexion();
         Connection cn = null;
@@ -15,7 +15,7 @@ public class empresa1 {
         try {
             cn = conexion.conectar();
             stm = cn.createStatement();            
-            rs = stm.executeQuery("SELECT empresa.nombre, empleado.nombre, empleado.ap_paterno, empleado.ap_materno, empleado.edad FROM empleado , empresa WHERE empleado.id_empresa = empresa.id_empresa AND empresa.nombre LIKE 'empresa_1'");
+            rs = stm.executeQuery("SELECT empresa.nombre, empleado.nombre, empleado.ap_paterno, empleado.ap_materno, empleado.edad FROM empleado , empresa WHERE empleado.id_empresa = empresa.id_empresa AND empleado.edad LIKE '55'");
 
             
             while (rs.next()) {
